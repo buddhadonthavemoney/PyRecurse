@@ -40,7 +40,9 @@ sudo python3 main.py
 -----
 
 ## 📺 Demo
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dcb5380a-db7e-40e1-bc38-abee44e4f21a" />
+
+
+https://github.com/user-attachments/assets/508bbaa8-0e63-42c5-bdbb-e3d7a7481a0f
 
 
 ## 🧠 How it Works
@@ -56,7 +58,11 @@ sudo python3 main.py
 
 ## Replacing your local DNS server 
 - Visualize the hundreds of queries that happen even when you aren't browsing anything
-- To change your DNS server to localhost, you can modify your network settings
+
+
+https://github.com/user-attachments/assets/8c0c650e-8ec4-4312-a492-ddc1551a356a
+
+
 
 ## 📄 License
 
