@@ -3,9 +3,6 @@
 Recursive DNS Resolver from scratch in Python built to understand how DNS resolution works under the hood!
 
 This project implements a functional DNS server that can be used as a dns server replacing your bullshit ISP's that do not respect ttl.
-
-It features **TTL-respecting caching**, robust logging, and handles glue records/intermediate nameserver resolution.
-
 ## ✨ Features
 
   * **Full Recursion:** Resolves domains starting from the 13 Root Servers.
@@ -43,48 +40,8 @@ sudo python3 main.py
 -----
 
 ## 📺 Demo
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dcb5380a-db7e-40e1-bc38-abee44e4f21a" />
 
-### 1\. The "Cold" Query (Full Recursion)
-
-**Client Command:**
-Asking for `buddhag.com.np` for the first time.
-
-```bash
-dig @127.0.0.1 buddhag.com.np
-```
-
-**Server Logs:**
-The server traverses the internet hierarchy step-by-step.
-
-```text
---- New Query: buddhag.com.np. ---
-10:20:01 - [Step 1] - Starting recursion for buddhag.com.np. at Root: 198.41.0.4
-10:20:01 - [Step 1] - Referral: buddhag.com.np. -> np.
-10:20:02 - [Step 1] - Glue record found: np. -> 196.19.0.1
-10:20:02 - [Step 1] - Referral: buddhag.com.np. -> mos.com.np.
-10:20:02 - [Step 1] - No Glue! Suspending query to resolve nameserver: mos.com.np.
-10:20:03 - [Step 2] - ... Resolved nameserver mos.com.np. to 202.52.2.2
-10:20:03 - [Step 1] - Answer received from 202.52.2.2
-```
-
-### 2\. The "Warm" Query (Cache Hit)
-
-**Client Command:**
-Asking for the same domain 10 seconds later.
-
-```bash
-dig @127.0.0.1 buddhag.com.np
-```
-
-**Server Logs:**
-The server serves the record instantly from memory, adjusting the TTL.
-
-```text
---- New Query: buddhag.com.np. ---
-10:20:11 - [Step 1] - CACHE HIT: buddhag.com.np. (TTL: 290s)
-```
-
------
 
 ## 🧠 How it Works
 
